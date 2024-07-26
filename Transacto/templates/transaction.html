@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button id="registerPageBtn" class="top-button">Register</button>
+        <h2>Transaction</h2>
+        <form action="{{ url_for('verify_transaction') }}" method="post">
+            <label for="cardNo">Card Number:</label><br>
+            <input type="text" id="cardNo" name="cardNo" required><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            
+            <button type="submit" id="transactionBtn">Submit</button>
+        </form>
+        <p id="transactionResult"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

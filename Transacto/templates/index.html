@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button id="signedInBtn" class="top-button">Already signed in</button>
+        <h2>Register</h2>
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="cardholderName">Card Holder Name:</label><br>
+            <input type="text" id="cardholderName" name="cardholderName" required><br>
+            
+            <label for="cardNo">Card Number:</label><br>
+            <input type="text" id="cardNo" name="cardNo" required><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            
+            <button type="submit" id="registerBtn">Register</button>
+            <p id="registerError" class="error-message"></p>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
